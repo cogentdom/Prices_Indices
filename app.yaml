@@ -1,0 +1,11 @@
+runtime: python37
+entrypoint: gunicorn -b :$PORT main:app
+
+# Update with Redis instance details
+env_variables:
+  REDISHOST: '10.238.38.163:6379'
+  REDISPORT: '6379'
+
+# Update with Serverless VPC Access connector details
+vpc_access_connector:
+  name: 'projects/grand-object-342106/locations/us-west1/connectors/serverless-vpc-redis'
